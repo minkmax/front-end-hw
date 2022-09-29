@@ -13,9 +13,8 @@ From the root folder run `npm install`.
 Now that that's done, run `cd comment-app` and run `npm install` to set up the react app.
 
 ## How to run the project
-First we need to spin up the back-end. 
+I modified the `npm start` script so we should be good with this one step.
 - Run `npm run dev` in the root folder (`front-end-hw`). 
-- Open a new terminal tab / window and in the same folder run `npm run start` (I modified the script). 
 
 Navigate to http://localhost:3000/ and you should see the app! 
 
