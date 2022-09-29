@@ -4,18 +4,17 @@ I built the MVP for this project!
 
 ## How to set the project up:
 From the root folder run `npm install`. 
-HOWEVER, one thing I ran into was that I was getting errors here. 
-I found out that the older version of `sqlite3` was causing errors on install (403 errors because there were some access restrictions on the install link). 
-What I did to fix this was change the version in `package.json` to `"sqlite3": "5.1.1" ` . 
-I then regenerated the `package-lock.json` by running `npm i --package-lock-only` and then `npm install`.
-No errors this time!
+- HOWEVER, one thing I ran into was that I was getting errors here. 
+- I found out that the older version of `sqlite3` was causing errors on install (403 errors because there were some access restrictions on the install link). 
+- What I did to fix this was change the version in `package.json` to `"sqlite3": "5.1.1" ` . 
+- I then regenerated the `package-lock.json` by running `npm i --package-lock-only` and then `npm install`.
+- No errors this time!
 
-Now that that's done, run `cd comment-app` and run `npm install`
+Now that that's done, run `cd comment-app` and run `npm install` to set up the react app.
 
 ## How to run the project
-First we need to spin up the back-end. 
-Run `npm run dev` in the root folder (`front-end-cyoa-take-home`). 
-Then in the same folder run `npm run start` (I modified the script). 
+I modified the `npm start` script so we should be good with this one step.
+- Run `npm run dev` in the root folder (`front-end-hw`). 
 
 Navigate to http://localhost:3000/ and you should see the app! 
 
