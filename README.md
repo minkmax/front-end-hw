@@ -10,11 +10,11 @@ From the root folder run `npm install`.
 - I then regenerated the `package-lock.json` by running `npm i --package-lock-only` and then `npm install`.
 - No errors this time!
 
-Now that that's done, run `cd comment-app` and run `npm install`
+Now that that's done, run `cd comment-app` and run `npm install` to set up the react app.
 
 ## How to run the project
 First we need to spin up the back-end. 
-Run `npm run dev` in the root folder (`front-end-cyoa-take-home`). 
+Run `npm run dev` in the root folder (`front-end-hw`). 
 Then in the same folder run `npm run start` (I modified the script). 
 
 Navigate to http://localhost:3000/ and you should see the app! 
