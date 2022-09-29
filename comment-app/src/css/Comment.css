@@ -1,0 +1,11 @@
+.comment {
+  margin: 2.5rem auto;
+  padding: 1rem;
+  border-radius: 10px; 
+  max-width: 60rem;
+  background-color: #3d3636;
+}
+
+.comment__message {
+  font-size: 30px;
+}

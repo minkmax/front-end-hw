@@ -19,12 +19,18 @@ const comment = new Comment(dataAccessObject);
 const wss = new WebSocket.Server({ port: 3002 });
 
 wss.on('connection', ws => {
-  console.log('yeet?!')
   ws.on('message', message => {
-    console.log('data has been sent')
-    ws.send('rightback at ya')
+    wss.broadcast()
   });
 });
+
+wss.broadcast = () => {
+  wss.clients.forEach((client) => {
+    if (client.readyState == WebSocket.OPEN) {
+      client.send('Comments were updated')
+    }
+  })
+}
 
 comment.createTable().catch(error => {
   console.log(`Error: ${JSON.stringify(error)}`);
