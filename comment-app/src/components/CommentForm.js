@@ -27,12 +27,15 @@ const CommentForm = () => {
     // Basic validation to make sure the inputs aren't blank.
     if (nameInput.trim().length === 0 && commentInput.trim().length === 0) {
       alert("Please enter a valid name and comment.");
+      setIsLoading(false);
       return;
     } else if (nameInput.trim().length === 0) {
       alert("Please enter a valid name.");
+      setIsLoading(false);
       return;
     } else if (commentInput.trim().length === 0) {
       alert("Please enter a valid comment.");
+      setIsLoading(false);
       return;
     }
 
