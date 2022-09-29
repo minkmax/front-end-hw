@@ -4,6 +4,10 @@ import { useState } from "react";
 const CommentForm = () => {
   const [nameInput, setNameInput] = useState("");
   const [commentInput, setCommentInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Websocket to notify the database that a comment has been added.
+  const ws = new WebSocket("ws://localhost:3002");
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -14,6 +18,8 @@ const CommentForm = () => {
   };
 
   const submitCommentHandler = async (e) => {
+    // Change the button text to "Submitting..." while making the request.
+    setIsLoading(true);
     e.preventDefault();
     // Basic validation to make sure the inputs aren't blank.
     if (nameInput.trim().length === 0 && commentInput.trim().length === 0) {
@@ -35,33 +41,22 @@ const CommentForm = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(commentData),
-    }
+    };
     try {
       const response = await fetch("/createComment", requestData);
       if (!response.ok) {
-        throw new Error('Comment request failed!');
+        throw new Error("Comment request failed!");
       }
+      // Sending websocket event so that the website will live-update with the new comment.
+      ws.send("comment sent");
     } catch (error) {
-        console.error("There was an error! Error:", error);
-        alert(
-          "There was an error with your comment submission. Please try again."
-        );
+      console.error("There was an error! Error:", error);
+      alert(
+        "There was an error with your comment submission. Please try again."
+      );
     }
-
-    // fetch("/createComment", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(commentData),
-    // })
-    //   .then((response) => response.json())
-    //   .catch((error) => {
-    //     console.error("There was an error! Error:", error);
-    //     alert(
-    //       "There was an error with your comment submission. Please try again."
-    //     );
-    //   });
+    // Revert the button text after load is complete.
+    setIsLoading(false);
 
     // Set the state back to blank so that the user can submit more comments.
     setNameInput("");
@@ -90,11 +85,14 @@ const CommentForm = () => {
           id="comment"
           cols="40"
           rows="20"
+          maxLength="750"
           value={commentInput}
           onChange={handleCommentChange}
         ></textarea>
         <div className="comment-form__submit">
-          <button onClick={submitCommentHandler}>Submit Comment</button>
+          <button onClick={submitCommentHandler}>
+            {isLoading ? "Submitting..." : "Submit Comment"}
+          </button>
         </div>
       </form>
     </div>
