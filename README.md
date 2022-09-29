@@ -1,3 +1,22 @@
+### Min Kyu Jeon Take-Home Project
+
+I built the MVP for this project! 
+
+## How to set the project up:
+From the root folder run `npm install`. 
+HOWEVER, one thing I ran into was that I was getting errors here. I found out that the older version of `sqlite3` was causing errors on install (403 errors because there were some access restrictions on the install link). 
+What I did to fix this was change the version in `package.json` to `"sqlite3": "5.1.1" ` . I then regenerated the `package-lock.json` by running `npm i --package-lock-only` and then `npm install`.
+No errors this time!
+
+Now that that's done, run `cd comment-app` and run `npm install`
+
+## How to run the project
+First we need to spin up the back-end. 
+Run `npm run dev` in the root folder (`front-end-cyoa-take-home`). 
+Then in the same folder run `npm run start` (I modified the script). 
+
+Navigate to http://localhost:3000/ and you should see the app! 
+
 # Front-end Choose Your Own Adventure Take-Home
 
 Design and build a comments feed that displays all comments and notifies a user in real-time when new comments are added.
