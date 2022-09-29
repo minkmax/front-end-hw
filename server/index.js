@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const WebSocket = require('ws');
+
 
 const DataAccessObject = require('./dataAccessObject');
 const Comment = require('./comment');
@@ -12,6 +14,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const dataAccessObject = new DataAccessObject('./database.sqlite3');
 const comment = new Comment(dataAccessObject);
+
+// Setting up a websocket to listen to any changes to the comments:
+const wss = new WebSocket.Server({ port: 3002 });
+
+wss.on('connection', ws => {
+  console.log('yeet?!')
+  ws.on('message', message => {
+    console.log('data has been sent')
+    ws.send('rightback at ya')
+  });
+});
 
 comment.createTable().catch(error => {
   console.log(`Error: ${JSON.stringify(error)}`);

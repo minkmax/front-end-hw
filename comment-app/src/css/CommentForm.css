@@ -1,0 +1,43 @@
+.comment-form {
+  margin: auto;
+  max-width: 60rem;
+}
+
+form {
+  width: 100%;
+}
+
+.comment-form__label {
+  font-size: 24px;
+}
+
+.comment-form__name-input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  height: 32px;
+  padding: 8px 14px;
+  background-color: beige;
+  border-radius: 4px;
+  border-style: solid;
+  width: 100%;
+  color: #3d3636;
+  margin: 0 auto 24px auto;
+}
+
+.comment-form__comment-input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  height: 300px;
+  padding: 8px 14px;
+  background-color: beige;
+  border-radius: 4px;
+  border-style: solid;
+  width: 100%;
+  color: #3d3636;
+  margin: 0 auto 24px auto;
+}
+
+.comment-form__submit {
+  display: flex;
+  justify-content: center;
+}
