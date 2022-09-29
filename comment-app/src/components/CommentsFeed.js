@@ -5,16 +5,12 @@ import Comment from "./Comment";
 const CommentsFeed = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [comments, setComments] = useState([]);
+  const [webSocket, setWebSocket] = useState(new WebSocket("ws://localhost:3002"));
 
-  useEffect(() => {
+  const setUpWebSocket = () => {
     // Setting up websocket for live updates to comment feed whenever it is updated.
-    const ws = new WebSocket("ws://localhost:3002");
-
-    // If a message was sent, that means a comment was added. Refresh the feed.
-    ws.addEventListener("message", () => {
-      getComments();
-    });
-  }, []);
+    setWebSocket(new WebSocket("ws://localhost:3002"));
+  }
 
   const getComments = async () => {
     setIsLoading(true);
@@ -34,9 +30,14 @@ const CommentsFeed = () => {
     setIsLoading(false);
   };
 
+  // Load the comments and add websocket listeners. 
   useEffect(() => {
     getComments();
-  }, []);
+    webSocket.addEventListener("message", () => {
+      getComments();
+    });
+    webSocket.addEventListener('close', setUpWebSocket)
+  }, [webSocket]);
 
   return (
     <div className="comments-feed">

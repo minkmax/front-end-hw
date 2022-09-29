@@ -1,13 +1,16 @@
 import "../css/CommentForm.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CommentForm = () => {
   const [nameInput, setNameInput] = useState("");
   const [commentInput, setCommentInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const [webSocket, setWebSocket] = useState(new WebSocket("ws://localhost:3002"));
   // Websocket to notify the database that a comment has been added.
-  const ws = new WebSocket("ws://localhost:3002");
+  const setUpWebSocket = () => {
+    // Making sure that the websocket doesn't automatically close.
+    setWebSocket(new WebSocket("ws://localhost:3002"));
+  }
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -48,7 +51,7 @@ const CommentForm = () => {
         throw new Error("Comment request failed!");
       }
       // Sending websocket event so that the website will live-update with the new comment.
-      ws.send("comment sent");
+      webSocket.send("comment sent");
     } catch (error) {
       console.error("There was an error! Error:", error);
       alert(
@@ -62,6 +65,10 @@ const CommentForm = () => {
     setNameInput("");
     setCommentInput("");
   };
+
+  useEffect(() => {
+    webSocket.addEventListener('close', setUpWebSocket)
+  },[webSocket]);
 
   return (
     <div className="comment-form">
