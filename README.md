@@ -6,17 +6,26 @@ I built the MVP for this project!
 From the root folder run `npm install`. 
 - HOWEVER, one thing I ran into was that I was getting errors here. 
 - I found out that the older version of `sqlite3` was causing errors on install (403 errors because there were some access restrictions on the install link). 
+- This was already done! No need to follow these steps, but here they are! 
 - What I did to fix this was change the version in `package.json` to `"sqlite3": "5.1.1" ` . 
 - I then regenerated the `package-lock.json` by running `npm i --package-lock-only` and then `npm install`.
 - No errors this time!
 
-Now that that's done, run `cd comment-app` and run `npm install` to set up the react app.
+Run `cd comment-app` and run `npm install` to set up the react app!
 
 ## How to run the project
 I modified the `npm start` script so we should be good with this one step.
 - Run `npm run dev` in the root folder (`front-end-hw`). 
 
 Navigate to http://localhost:3000/ and you should see the app! 
+
+<img width="818" alt="image" src="https://user-images.githubusercontent.com/108198395/193167561-a0c35bb5-0cff-4291-a5d7-4a35a4b083dc.png">
+
+- You must enter a name and comment, empty values are not allowed and will be caught! 
+- After submitting a comment, you should see the comment show up live right under! 
+- This will also update for multiple clients, they will see the comment real-time as well. 
+   - what I did to test was open another tab with the http://localhost:3000/ URL and tested to see if that page updated with the new comment submitted from the other page! 
+- You could refresh the page and see that the comments are all still there (the ones that were submitted). 
 
 # Front-end Choose Your Own Adventure Take-Home
 
