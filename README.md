@@ -1,6 +1,6 @@
 ### Min Kyu Jeon Take-Home Project
 
-I built the MVP for this project! 
+I built the MVP (minimal viable product) for this project! 
 
 ## How to set the project up:
 From the root folder run `npm install`. 
@@ -14,7 +14,7 @@ From the root folder run `npm install`.
 Run `cd comment-app` and run `npm install` to set up the react app!
 
 ## How to run the project
-I modified the `npm start` script so we should be good with this one step.
+I modified the `start` script so we should be good with this one step.
 - Run `npm run dev` in the root folder (`front-end-hw`). 
 
 Navigate to http://localhost:3000/ and you should see the app! 
