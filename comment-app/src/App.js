@@ -9,7 +9,6 @@ function App() {
         <h1>Comments Feed</h1>
       </div>
       <CommentForm />
-
       <CommentsFeed />
     </div>
   );

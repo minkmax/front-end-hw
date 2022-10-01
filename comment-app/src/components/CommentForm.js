@@ -1,5 +1,5 @@
-import "../css/CommentForm.css";
 import { useEffect, useState } from "react";
+import "../css/CommentForm.css";
 
 const CommentForm = () => {
   const [nameInput, setNameInput] = useState("");
@@ -53,7 +53,7 @@ const CommentForm = () => {
       if (!response.ok) {
         throw new Error("Comment request failed!");
       }
-      // Sending websocket event so that the website will live-update with the new comment.
+      // Sending the server a message to make sure all other clients get their comments updated. 
       webSocket.send("comment sent");
     } catch (error) {
       console.error("There was an error! Error:", error);
@@ -70,6 +70,7 @@ const CommentForm = () => {
   };
 
   useEffect(() => {
+    // Sometimes the websocket automatically closes after inactivity, making sure this doesn't happen. 
     webSocket.addEventListener('close', setUpWebSocket)
   },[webSocket]);
 
@@ -83,6 +84,7 @@ const CommentForm = () => {
           className="comment-form__name-input"
           type="text"
           id="name"
+          maxLength="50"
           value={nameInput}
           onChange={handleNameChange}
         />
