@@ -12,7 +12,7 @@ After that, `cd comment-app` and run `npm install` to set up the react app!
 - I then regenerated the `package-lock.json` by running `npm i --package-lock-only` and then ran `npm install`.
 - No errors this time!
 
-
+If there are any issues at all, please contact me at maxjeon2@gmail.com. I will try to get back to you immediately!!
 
 ## How to run the project
 I modified the `start` script so we should be good with this one step.
