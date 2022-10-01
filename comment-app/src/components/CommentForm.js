@@ -39,7 +39,7 @@ const CommentForm = () => {
       return;
     }
 
-    // Sending the POST request to add the comment to the back-end.
+    // Noticed that the id and date seem to be automatically set by the DB, only inputting name and message.
     const commentData = { name: nameInput, message: commentInput };
     const requestData = {
       method: "POST",
