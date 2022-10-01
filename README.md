@@ -4,14 +4,15 @@ I built the MVP (minimal viable product) for this project!
 
 ## How to set the project up:
 From the root folder run `npm install`. 
+After that, `cd comment-app` and run `npm install` to set up the react app!
 - HOWEVER, one thing I ran into was that I was getting errors here. 
 - I found out that the older version of `sqlite3` was causing errors on install (403 errors because there were some access restrictions on the install link). 
-- This was already done! No need to follow these steps, but here they are! 
+- The following has already been done! No need to follow these steps, but here they are! 
 - What I did to fix this was change the version in `package.json` to `"sqlite3": "5.1.1" ` . 
-- I then regenerated the `package-lock.json` by running `npm i --package-lock-only` and then `npm install`.
+- I then regenerated the `package-lock.json` by running `npm i --package-lock-only` and then ran `npm install`.
 - No errors this time!
 
-Run `cd comment-app` and run `npm install` to set up the react app!
+
 
 ## How to run the project
 I modified the `start` script so we should be good with this one step.
