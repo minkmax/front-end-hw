@@ -1,11 +1,12 @@
 ### Min Kyu Jeon Take-Home Project
-
-I built the MVP (minimal viable product) for this project! 
+- I built the MVP (minimal viable product) for this project! 
+- I used `create-react-app` to create a simple React web app that utilizes the API to post and get comments!
+- All of the code for the app is inside the `comment-app` folder and I also made some changes to the API in `index.js` in the `server` folder.
 
 ## How to set the project up:
-First clone the repository (I ran `git clone https://github.com/minkmax/front-end-hw.git` in my tests). 
-From the project root folder (`front-end-hw`) run `npm install`. 
-After that, `cd comment-app` and run `npm install` to set up the react app!
+- First clone the repository (I ran `git clone https://github.com/minkmax/front-end-hw.git` in my tests). 
+- From the project root folder (`front-end-hw`) run `npm install`. 
+- After that, `cd comment-app` and run `npm install` to set up the react app!
 ### HOWEVER, one thing I ran into was that I was getting errors here. 
 - I found out that the older version of `sqlite3` was causing errors on install (403 errors because there were some access restrictions on the install link). 
 ### The following has already been done! No need to follow these steps, but here they are! 
