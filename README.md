@@ -3,7 +3,7 @@
 I built the MVP (minimal viable product) for this project! 
 
 ## How to set the project up:
-From the root folder run `npm install`. 
+From the project root folder (`front-end-hw`) run `npm install`. 
 After that, `cd comment-app` and run `npm install` to set up the react app!
 ### HOWEVER, one thing I ran into was that I was getting errors here. 
 - I found out that the older version of `sqlite3` was causing errors on install (403 errors because there were some access restrictions on the install link). 
@@ -16,7 +16,7 @@ If there are any issues at all, please contact me at maxjeon2@gmail.com. I will 
 
 ## How to run the project
 I modified the `start` script so we should be good with this one step.
-- Run `npm run dev` in the root folder (`front-end-hw`). 
+- Run `npm run dev` in the project root folder (`front-end-hw`). 
 
 Navigate to http://localhost:3000/ and you should see the app! 
 
