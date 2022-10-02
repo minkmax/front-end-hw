@@ -18,12 +18,14 @@ const comment = new Comment(dataAccessObject);
 // Setting up a websocket to listen to any changes to the comments:
 const wss = new WebSocket.Server({ port: 3002 });
 
+// Whenever a client connects, set up the broadcast whenever one client send a message (message is sent on comment submission).
 wss.on('connection', ws => {
   ws.on('message', message => {
     wss.broadcast()
   });
 });
 
+// Send all the clients a message that a comment has been updated so that they pull in the lastest comment. 
 wss.broadcast = () => {
   wss.clients.forEach((client) => {
     if (client.readyState == WebSocket.OPEN) {
