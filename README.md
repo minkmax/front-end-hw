@@ -1,6 +1,7 @@
 ### Min Kyu Jeon Take-Home Project
 - I built the MVP (minimal viable product) for this project! 
 - I used `create-react-app` to create a simple React web app that utilizes the API to post and get comments!
+- Traditional React + CSS was used, I did not use a design system, SCSS, or any CSS Modules / styled components packages. 
 - All of the code for the app is inside the `comment-app` folder and I also made some changes to the API in `index.js` in the `server` folder.
 
 ## How to set the project up:
