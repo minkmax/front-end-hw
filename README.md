@@ -3,6 +3,7 @@
 I built the MVP (minimal viable product) for this project! 
 
 ## How to set the project up:
+First clone the repository (I ran `git clone https://github.com/minkmax/front-end-hw.git` in my tests). 
 From the project root folder (`front-end-hw`) run `npm install`. 
 After that, `cd comment-app` and run `npm install` to set up the react app!
 ### HOWEVER, one thing I ran into was that I was getting errors here. 
